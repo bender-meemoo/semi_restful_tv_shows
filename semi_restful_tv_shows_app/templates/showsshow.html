@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+    <h1>TV Show {{show.id}}</h1>
+    <a href="/shows">Go Back</a>
+    <br>
+    <p>Title: {{show.title}}</p>
+    <p>Network: {{show.network}}</p>
+    <p>Release Date: {{show.releaseDate}}</p>
+    <p>Description: {{show.description}}</p>
+    <br>
+    <p>Last Updated: {{show.updated_at}}</p>
+    <a href="/shows/{{show.id}}/edit">Edit</a> <a href="/showsdelete/{{show.id}}">Delete</a>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">    
+</head>
+<body>
+    <h1>Add a New Show</h1>
+    <a href="/shows">Go Back</a>
+    <br>
+    <form action="/showscreate" method="POST">
+        {% csrf_token %}
+        <p>Title</p><input type="text" name="addtitle" id="">
+        <p>Network</p><input type="text" name="addnetwork" id="">
+        <p>Release Date</p><input type="date" name="addreleaseDate" id="">
+        <p>Description</p><textarea name="adddescription" id="" cols="30" rows="10"></textarea>
+        <br>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

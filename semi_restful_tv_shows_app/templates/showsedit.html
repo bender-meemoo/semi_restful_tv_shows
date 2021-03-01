@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+    <h1>Edit Show {{show.id}}</h1>
+    <a href="/shows">Go Back</a>
+    <br>
+    <form action="/showsedited/{{show.id}}" method="POST">
+        {% csrf_token %}
+        <p>Title</p><input type="text" name="edittitle" id="" value="{{show.title}}">
+        <p>Network</p><input type="text" name="editnetwork" id="" value="{{show.network}}">
+        <p>Release Date</p><input type="date" name="editreleaseDate" id="" value="{{show.releaseDate}}">
+        <p>Description</p><textarea name="editdescription" id="" cols="30" rows="10">{{show.description}}</textarea>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/shows/{{show.id}}">Go to Show</a>
+</body>
+
+</html>
